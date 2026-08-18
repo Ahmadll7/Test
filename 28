@@ -1,0 +1,5 @@
+=dashboard!$AX$21:INDEX(dashboard!$AX$21:$AX$32,IF(dashboard!$K$1="الكل",12,1))
+
+
+
+=dashboard!$AY$21:INDEX(dashboard!$AY$21:$AY$32,IF(dashboard!$K$1="الكل",12,1))
