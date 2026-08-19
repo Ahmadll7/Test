@@ -1,6 +1,3 @@
-=dashboard!$BA$21:INDEX(dashboard!$BA$21:$BA$32,IF(dashboard!$K$1="الكل",12,1))
+=IF($K$1="الكل",INDEX('استفسارات'!$C$26:$N$26,1,ROWS($BE$21:BE21)),IF(ROWS($BE$21:BE21)=1,$K$1,""))
 
-
-
-
-=dashboard!$BB$21:INDEX(dashboard!$BB$21:$BB$32,IF(dashboard!$K$1="الكل",12,1))
+=IF(BE21="","",IF($K$2="الكل",INDEX('استفسارات'!$C$32:$N$32,1,MATCH(BE21,'استفسارات'!$C$26:$N$26,0)),INDEX('استفسارات'!$C$27:$N$31,MATCH($K$2,'استفسارات'!$B$27:$B$31,0),MATCH(BE21,'استفسارات'!$C$26:$N$26,0))))
