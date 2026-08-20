@@ -1,1 +1,37 @@
-=IF($K$1="الكل","—",IF(INDEX($AY$41:$AY$52,MATCH($K$1,$AX$41:$AX$52,0))>0,"▲ "&TEXT(INDEX($AY$41:$AY$52,MATCH($K$1,$AX$41:$AX$52,0)),"0.0%"),IF(INDEX($AY$41:$AY$52,MATCH($K$1,$AX$41:$AX$52,0))<0,"▼ "&TEXT(ABS(INDEX($AY$41:$AY$52,MATCH($K$1,$AX$41:$AX$52,0))),"0.0%"),"—")))
+Private Sub Worksheet_Change(ByVal Target As Range)
+
+    If Intersect(Target, Me.Range("K1:K2")) Is Nothing Then Exit Sub
+
+    On Error GoTo ExitHandler
+    Application.EnableEvents = False
+
+    UpdateMDRSColor
+
+ExitHandler:
+    Application.EnableEvents = True
+
+End Sub
+
+
+Private Sub UpdateMDRSColor()
+
+    Dim txt As String
+
+    txt = Me.Range("BE41").Value
+
+    With Me.Shapes("TextBox 14").TextFrame.Characters.Font
+
+        If Left(txt, 1) = "▲" Then
+            .Color = RGB(0, 176, 80)
+
+        ElseIf Left(txt, 1) = "▼" Then
+            .Color = RGB(192, 0, 0)
+
+        Else
+            .Color = RGB(0, 0, 0)
+
+        End If
+
+    End With
+
+End Sub
