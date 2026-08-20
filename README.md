@@ -1,22 +1,5 @@
-Sub UpdateMDRSColor()
+=IF($K$1="الكل","—",INDEX($AY$41:$AY$52,MATCH($K$1,$AX$41:$AX$52,0)))
 
-    Dim txt As String
 
-    txt = Worksheets("dashboard").Range("BE41").Value
 
-    With Worksheets("dashboard").Shapes("TextBox 14").TextFrame2.TextRange.Font.Fill.ForeColor
-
-        If Left(txt, 1) = "▲" Then
-            .RGB = RGB(0, 176, 80)
-
-        ElseIf Left(txt, 1) = "▼" Then
-            .RGB = RGB(192, 0, 0)
-
-        Else
-            .RGB = RGB(0, 0, 0)
-
-        End If
-
-    End With
-
-End Sub
+[Green]"▲ "0.0%;[Red]"▼ "0.0%;-
