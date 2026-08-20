@@ -1,1 +1,1 @@
-=IF($K$1="الكل","—",INDEX($AY$41:$AY$52,MATCH($K$1,$AX$41:$AX$52,0)))
+=IF($K$1="الكل","—",IF(INDEX($AY$41:$AY$52,MATCH($K$1,$AX$41:$AX$52,0))>0,"▲ "&TEXT(INDEX($AY$41:$AY$52,MATCH($K$1,$AX$41:$AX$52,0)),"0.0%"),IF(INDEX($AY$41:$AY$52,MATCH($K$1,$AX$41:$AX$52,0))<0,"▼ "&TEXT(ABS(INDEX($AY$41:$AY$52,MATCH($K$1,$AX$41:$AX$52,0))),"0.0%"),"—")))
