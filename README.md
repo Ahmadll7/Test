@@ -1,1 +1,6 @@
-=LET(d,'اجتماعات'!$G$2:$G$175,m,MONTH(d),day,DAY(d),w,IF(day<=7,1,IF(day<=14,2,IF(day<=21,3,IF(day<=28,4,5)))),c,MAKEARRAY(12,5,LAMBDA(r,s,SUMPRODUCT(--(m=r),--(w=s)))),p,XMATCH(MAX(c),TOCOL(c)),r,ROUNDUP(p/5,0),s,MOD(p-1,5)+1,"الأسبوع "&CHOOSE(s,"الأول","الثاني","الثالث","الرابع","الخامس")&" - "&INDEX($AX$106:$AX$117,r)&" - "&MAX(c))
+=LET(d,'اجتماعات'!$G$2:$G$175,m,MONTH(d),day,DAY(d),w,IF(day<=7,1,IF(day<=14,2,IF(day<=21,3,IF(day<=28,4,5)))),c,MAKEARRAY(12,5,LAMBDA(r,s,SUMPRODUCT(--(m=r),--(w=s)))),p,XMATCH(MAX(c),TOCOL(c)),r,ROUNDUP(p/5,0),s,MOD(p-1,5)+1,"الأسبوع "&CHOOSE(s,"الأول","الثاني","الثالث","الرابع","الخامس")&" - "&INDEX($AX$106:$AX$117,r))
+
+
+
+
+=LET(d,'اجتماعات'!$G$2:$G$175,m,MONTH(d),day,DAY(d),w,IF(day<=7,1,IF(day<=14,2,IF(day<=21,3,IF(day<=28,4,5)))),c,MAKEARRAY(12,5,LAMBDA(r,s,SUMPRODUCT(--(m=r),--(w=s)))),MAX(c))
