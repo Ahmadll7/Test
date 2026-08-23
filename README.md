@@ -1,1 +1,1 @@
-=SUMPRODUCT(--(MONTH('اجتماعات'!$G$2:$G$175)=ROWS($AY$106:AY106)))
+=IF($K$1="الكل",IF($K$2="الكل",AY106,IF(AND(MONTH(INDEX('اجتماعات'!$G$2:$G$175,1))=ROWS($BA$106:BA106),WEEKNUM(INDEX('اجتماعات'!$G$2:$G$175,1),2)=VALUE($K$2)),1,0)),IF(ROWS($BA$106:BA106)=MATCH($K$1,$AX$106:$AX$117,0),IF($K$2="الكل",AY106,0),0))
