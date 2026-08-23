@@ -1,1 +1,1 @@
-=SUM($AY$106:$AY$117)
+=SUMPRODUCT(--(MONTH('اجتماعات'!$G$2:$G$175)=ROWS($BC$106:BC106)))
