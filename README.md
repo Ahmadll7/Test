@@ -1,9 +1,1 @@
-=SUM(AY2:AY5)
-
-=AY2/$AY$9
-
-=AY3/$AY$9
-
-=AY4/$AY$9
-
-=AY5/$AY$9
+=COUNTIF('الوثائق التنظيمية'!J:J,AX17)
